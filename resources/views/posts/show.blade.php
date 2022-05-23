@@ -3,15 +3,15 @@
 
 <div class="card text-center mt-5 mb-5">
     <div class="card-header">
-        Featured
+        #{{ $post->id }}
     </div>
     <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{ $post->title }}</h5>
+            <p class="card-text">{{ $post->description }}</p>
+
     </div>
     <div class="card-footer text-muted">
-        2 days ago
+        {{ date('Y-m-d', strtotime($post->created_at)) }}
     </div>
 </div>
 

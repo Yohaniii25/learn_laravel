@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     //write the logic in here
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         Post::create([
             // logged user details
             'user_id' => auth()->user()->id,
@@ -20,7 +21,10 @@ class PostController extends Controller
         return back();
     }
 
-    public function show() {
-        return view('posts.show');
+    public function show($postId)
+    {
+
+        $post = Post::find($postId);
+        return view('posts.show', compact('post'));
     }
 }
