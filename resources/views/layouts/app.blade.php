@@ -33,6 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="navbar-nav ml-auto">
+                            <a class="nav-link" href="{{ route('home') }}">New Post</a>
+                        </li>
+                        <li class="navbar-nav ml-auto">
+                            <a class="nav-link" href="{{ route('posts.all') }}">All Posts</a>
+                        </li>
 
                     </ul>
 
