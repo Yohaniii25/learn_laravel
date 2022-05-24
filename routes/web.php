@@ -33,4 +33,7 @@ Route::post('/posts/{postId}/update', [App\Http\Controllers\PostController::clas
 Route::get('/posts/{postId}/delete', [App\Http\Controllers\PostController::class, 'delete'])->name('posts.delete');
 
 // Admin Routes
-Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->middleware('admin')->name('admin.dashboard');
+//Admin routes
+Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->middleware('admin')->name('dashboard');
+});
