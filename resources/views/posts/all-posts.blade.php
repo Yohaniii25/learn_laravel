@@ -4,7 +4,12 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+            @endif
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -15,7 +20,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 12.26 vide number 8 -->
+                    @foreach ($posts as $post)
+                    <tr>
+                        <th scope="row">{{ $post->id }}</th>
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->description }}</td>
+                        <td>
+                            <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ route('posts.delete', $post->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
 
