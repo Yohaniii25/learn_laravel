@@ -31,3 +31,6 @@ Route::get('/posts/{postId}/edit', [App\Http\Controllers\PostController::class, 
 Route::post('/posts/{postId}/update', [App\Http\Controllers\PostController::class, 'update'])->name('posts.update');
 
 Route::get('/posts/{postId}/delete', [App\Http\Controllers\PostController::class, 'delete'])->name('posts.delete');
+
+// Admin Routes
+Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->middleware('admin')->name('admin.dashboard');
