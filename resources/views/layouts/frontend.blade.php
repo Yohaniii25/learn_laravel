@@ -40,17 +40,19 @@
                     <a class="btn btn-sm btn-outline-secondary mr-4" href="{{ route('register') }}">Sign up</a>
                 </div>
             </div>
+
         </header>
+
+        @yield('content')
 
         <!-- to reset password :-  php artisan migrate:fresh -->
 
-
-        @yield('content')
-    </div>
     </div>
 
+</div>
 
-    <footer class="blog-footer">
+
+    <footer class="blog-footer"> <br><br><br><br><br>
         <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         <p>
             <a href="#">Back to top</a>
